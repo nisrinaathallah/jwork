@@ -7,62 +7,50 @@ package nisrinaathallah.jwork;
 
 import java.util.ArrayList;
 
-public class DatabaseJobseeker
-{
-    // Mendefinisikan variabel
+public class DatabaseJobseeker {
     private static ArrayList<Jobseeker> JOBSEEKER_DATABASE = new ArrayList<Jobseeker>();
+    ;
     private static int lastId = 0;
 
-    public static ArrayList<Jobseeker> getDatabaseJobseeker(){
+    public static ArrayList<Jobseeker> getDatabaseJobseeker() {
         return JOBSEEKER_DATABASE;
     }
 
-    public static int getLastId(){
+    public static int getLastId() {
         return lastId;
     }
 
-    public static Jobseeker getJobseekerById(int id) throws JobSeekerNotFoundException{
+    public static Jobseeker getJobseekerById(int id) throws JobSeekerNotFoundException {
         Jobseeker val = null;
-        try
-        {
-            for (Jobseeker js : JOBSEEKER_DATABASE)
-            {
-                if (id == js.getId())
-                {
+        try {
+            for (Jobseeker js : JOBSEEKER_DATABASE) {
+                if (id == js.getId()) {
                     val = js;
                 }
             }
-        }
-        catch (Exception error)
-        {
+        } catch (Exception error) {
             throw new JobSeekerNotFoundException(id);
         }
         return val;
     }
-    /**
-     * method untuk menambahkan objek database job
-     * @return nilai false
-     */
-    public static boolean addJobseeker(Jobseeker jobseeker) throws EmailAlreadyExistsException{
-        for (Jobseeker js : JOBSEEKER_DATABASE) {
-            if (jobseeker.getEmail() == js.getEmail()) {
+
+    public static boolean addJobseeker(Jobseeker jobseeker) throws EmailAlreadyExistsException {
+        for(Jobseeker jobseekers : JOBSEEKER_DATABASE) {
+            if(jobseekers.getEmail() == jobseeker.getEmail()) {
                 throw new EmailAlreadyExistsException(jobseeker);
             }
         }
+
         JOBSEEKER_DATABASE.add(jobseeker);
         lastId = jobseeker.getId();
         return true;
     }
 
-    /**
-     * method untuk menghapus objek database job
-     * @return nilai false
-     */
+
+
     public static boolean removeJobseeker(int id) throws JobSeekerNotFoundException{
-        for (Jobseeker js : JOBSEEKER_DATABASE)
-        {
-            if (js.getId() == id)
-            {
+        for (Jobseeker js : JOBSEEKER_DATABASE) {
+            if (js.getId() == id) {
                 JOBSEEKER_DATABASE.remove(js);
                 return true;
             }
@@ -70,4 +58,15 @@ public class DatabaseJobseeker
         throw new JobSeekerNotFoundException(id);
     }
 
+    public static Jobseeker jobseekerLogin(String email, String password) {
+        Jobseeker val = null;
+        for (Jobseeker js : JOBSEEKER_DATABASE) {
+            if (email == js.getEmail() && password == js.getPassword()) {
+                val = js;
+            } else {
+                return null;
+            }
+        }
+        return val;
+    }
 }

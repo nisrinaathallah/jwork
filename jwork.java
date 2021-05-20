@@ -2,23 +2,44 @@
  * @author: Nisrina Athallah - 1806148813
  * @version: Modul 8 - Case Study - 20 Mei 2021
  */
-package nisrinaathallah.jwork;
-
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
-class JWork {
+public class jwork {
 
     public static void main(String[] args) {
-        SpringApplication.run(JWork.class, args);
+        Location loc1 = new Location("Jakarta", "Jakarta Timur", "Pulomas");
+        Location loc2 = new Location("Jawa Barat", "Bandung", "Asal daerah");
+        Location loc3 = new Location("Sumatera Barat", "Padang", "Suku");
+
+        DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId()+1, "Nisrina", "nisrina9@gmail.com", "08123456789", loc1));
+        DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId()+1, "Ailsa", "ailsa123@gmail.com", "081111111111", loc2));
+        DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId()+1, "Sherly", "sherly15@gmail.com", "082222222222", loc3));
+
+        try{
+            DatabaseJob.addJob(new Job(DatabaseJob.getLastId()+1, "Nisrina", DatabaseRecruiter.getRecruiterById(1), 5, JobCategory.DataScientist));
+        }catch (RecruiterNotFoundException error){
+            System.out.println(error.getMessage());
+        }
+        try{
+            DatabaseJob.addJob(new Job(DatabaseJob.getLastId()+1, "Nisrina2", DatabaseRecruiter.getRecruiterById(2), 50, JobCategory.DataAnalyst));
+        }catch (RecruiterNotFoundException error){
+            System.out.println(error.getMessage());
+        }
+        try{
+            DatabaseJob.addJob(new Job(DatabaseJob.getLastId()+1, "Nisrina3", DatabaseRecruiter.getRecruiterById(3), 500, JobCategory.BackEnd));
+        }catch (RecruiterNotFoundException error){
+            System.out.println(error.getMessage());
+        }
+        try{
+            DatabaseJob.addJob(new Job(DatabaseJob.getLastId()+1, "Nisrina4", DatabaseRecruiter.getRecruiterById(3), 5000, JobCategory.FrontEnd));
+        }catch (RecruiterNotFoundException error){
+            System.out.println(error.getMessage());
+        }
+
+        SpringApplication.run(jwork.class, args);
     }
 
 }
+
+
 
 //ewalletpayment1.printData();
 //ewalletpayment2.printData();
