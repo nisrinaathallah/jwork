@@ -3,12 +3,13 @@
  * @version: Modul 8 - Case Study - 20 Mei 2021
  */
 
+package nisrinaathallah.jwork;
+
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-package nisrinaathallah.jwork;
 
 /**
  deklarasi class
