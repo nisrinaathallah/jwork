@@ -15,12 +15,17 @@ public enum PaymentType
 
     private String paymenttype;
 
+    /**
+     * method payment type
+     * @param paymenttype a
+     */
     PaymentType(String paymenttype){
         this.paymenttype = paymenttype;
     }
 
     /**
      * method untuk menghasilkan paymenttype
+     * @return payment type
      */
     public String toString(){
         return paymenttype;

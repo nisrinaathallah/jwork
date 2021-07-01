@@ -29,9 +29,9 @@ public class DatabaseJob /** inisiasi class */
 
     /**
      * method getter dengan id
-     * @param id
+     * @param id database job
      * @return val jika nilainya sama dengan job
-     * @throws JobnotFoundException
+     * @throws JobnotFoundException jika job tidak ada
      */
     public static Job getJobById(int id) throws JobnotFoundException {
         Job val = null;
@@ -51,7 +51,7 @@ public class DatabaseJob /** inisiasi class */
 
     /**
      * method getter job dengan recruiter
-     * @param recruiterId
+     * @param recruiterId database job
      * @return null
      */
     public static ArrayList<Job> getJobByRecruiter(int recruiterId){
@@ -67,7 +67,7 @@ public class DatabaseJob /** inisiasi class */
 
     /**
      * method getter job berdasarkan kategori
-     * @param category
+     * @param category database job
      * @return null
      */
     public static ArrayList<Job> getJobByCategory(JobCategory category){
@@ -83,7 +83,7 @@ public class DatabaseJob /** inisiasi class */
 
     /**
      * method untuk menambahkan job
-     * @param job
+     * @param job database job
      * @return true jika job berhasil ditambah
      */
     public static boolean addJob(Job job){
@@ -95,7 +95,7 @@ public class DatabaseJob /** inisiasi class */
 
     /**
      * method untuk menghapus job
-     * @param id
+     * @param id database job
      * @return true jika job berhasil dihapus
      * @throws JobnotFoundException jika job tidak ditemukan
      */

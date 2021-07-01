@@ -30,7 +30,7 @@ public class DatabaseInvoice {
 
     /**
      * method getter invoice dengan id
-     * @param id
+     * @param id pada Database Invoice
      * @return invoice dengan id yang sesuai
      * @throws InvoiceNotFoundException
      */
@@ -51,7 +51,7 @@ public class DatabaseInvoice {
 
     /**
      * method getter invoice dengan jobseeker
-     * @param jobseekerId
+     * @param jobseekerId database invoice
      * @return invoice dengan jobseeker yang sesuai
      */
     public static ArrayList<Invoice> getInvoiceByJobseeker(int jobseekerId){
@@ -66,9 +66,9 @@ public class DatabaseInvoice {
 
     /**
      * method penambahan invoice
-     * @param invoice
+     * @param invoice pada Database Invoice
      * @return true jika invoice berhasil ditambah
-     * @throws OngoingInvoiceAlreadyExistsException
+     * @throws OngoingInvoiceAlreadyExistsException jika invoice ongoing sudah ada
      */
     public static boolean addInvoice(Invoice invoice) throws OngoingInvoiceAlreadyExistsException{
         for (Invoice invc : INVOICE_DATABASE) {
@@ -83,8 +83,8 @@ public class DatabaseInvoice {
 
     /**
      * method pengubahan status invoice
-     * @param id
-     * @param invoiceStatus
+     * @param id pada Database Invoice
+     * @param invoiceStatus pada Database Invoice
      * @return true jika status invoice berhasil diubah
      */
     public static boolean changeInvoiceStatus(int id, InvoiceStatus invoiceStatus){
@@ -97,11 +97,12 @@ public class DatabaseInvoice {
         return false;
     }
 
+
     /**
      * method untuk menghapus invoice
-     * @param id
-     * @return true jika invoice berhasil terhapus
-     * @throws true jika tidak terdapat invoice
+     * @param id database invoice
+     * @return true jika berhasil
+     * @throws InvoiceNotFoundException jika tidak ada invoice
      */
     public static boolean removeInvoice(int id) throws InvoiceNotFoundException{
         for (int i=0; i < INVOICE_DATABASE.size(); i++) {

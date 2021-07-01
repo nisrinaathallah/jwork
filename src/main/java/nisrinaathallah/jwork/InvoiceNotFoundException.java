@@ -12,7 +12,7 @@ public class InvoiceNotFoundException extends Exception{
 
     /**
      * constructor yang digunakan
-     * @param invoice_input
+     * @param invoice_input pada invoice not found exception
      */
     public InvoiceNotFoundException(int invoice_input){
         super("Invoice ID: ");

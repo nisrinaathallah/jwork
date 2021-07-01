@@ -24,8 +24,8 @@ public class BonusController {
 
     /**
      * getter dengan referral code
-     * @param referralCode
-     * @return
+     * @param referralCode pada Bonus Controller
+     * @return bonus jika sesuai
      */
     @RequestMapping(value = "/{referralCode}", method = RequestMethod.GET)
     public Bonus getBonusByReferralCode(@PathVariable String referralCode) {
@@ -36,12 +36,12 @@ public class BonusController {
 
     /**
      * method untuk menambah bonus kode
-     * @param referralCode
+     * @param referralCode untuk kode
      * @param extraFee untuk ekstra gaji
      * @param minTotalFee untuk gaji minimal
      * @param active untuk status bonus code
      * @return bonus yang telah dibuat
-     * @throws ReferralCodeAlreadyExistsException
+     * @throws ReferralCodeAlreadyExistsException referral code
      */
     @RequestMapping(value = "", method = RequestMethod.POST)
     public Bonus addBonus(@RequestParam(value="referralCode") String referralCode,

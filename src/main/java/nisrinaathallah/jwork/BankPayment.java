@@ -6,7 +6,6 @@
 package nisrinaathallah.jwork;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 
 //class bank payment//
@@ -16,9 +15,9 @@ public class BankPayment extends Invoice {
 
     /**
      * constructor bank payment
-     * @param id
-     * @param jobs
-     * @param jobseeker
+     * @param id nomor id
+     * @param jobs jenis pekerjaan
+     * @param jobseeker pelamar kerja
      */
     public BankPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker) {
         super(id, jobs, jobseeker);
@@ -26,10 +25,10 @@ public class BankPayment extends Invoice {
 
     /**
      * constructor bank payment dengan admin fee
-     * @param id
-     * @param job
-     * @param jobseeker
-     * @param adminFee
+     * @param id nomor id
+     * @param job pekerjaan
+     * @param jobseeker pelamar kerjaan
+     * @param adminFee upah admin
      */
     public BankPayment(int id, ArrayList<Job> job, Jobseeker jobseeker, int adminFee) {
         super(id, job, jobseeker);
@@ -54,7 +53,7 @@ public class BankPayment extends Invoice {
 
     /**
      * method setter admin fee
-     * @param adminFee
+     * @param adminFee upah admin
      */
     public void setAdminFee(int adminFee) {
         this.adminFee = adminFee;
@@ -71,7 +70,7 @@ public class BankPayment extends Invoice {
     @Override
     /**
      * method string untuk menampilkan hasil
-     * @return string
+     * @return string jika hasil sesuai
      */
     public String toString()
     {

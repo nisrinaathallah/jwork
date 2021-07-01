@@ -23,7 +23,7 @@ public enum JobCategory
 
     /**
      * insiasi jenis tipe data Job Category
-     * @param text
+     * @param text untuk kategori job
      */
     JobCategory(String text){
         this.text = text;
@@ -31,6 +31,7 @@ public enum JobCategory
 
     /**
      * method menampilkan kategori
+      * @return text
      */
     public String toString(){
         return text;

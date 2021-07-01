@@ -22,7 +22,7 @@ public class DatabaseJobseekerPostgre {
 
     /**
      * method penambahan jobseeker
-     * @param jobseeker
+     * @param jobseeker pelamar kerja
      * @return jobseeker
      */
     public static Jobseeker addJobseeker(Jobseeker jobseeker) {
@@ -79,7 +79,7 @@ public class DatabaseJobseekerPostgre {
 
     /**
      * method getter jobseeker dengan id
-     * @param id
+     * @param id database postgre
      * @return value jobseeker
      */
     public static Jobseeker getJobseekerById(int id) {
@@ -109,7 +109,7 @@ public class DatabaseJobseekerPostgre {
 
     /**
      * method penghapusan jobseeker
-     * @param id
+     * @param id database postgre
      * @return true jika jobseeker berhasil dihapus
      */
     public static boolean removeJobseeker(int id) {
@@ -129,8 +129,8 @@ public class DatabaseJobseekerPostgre {
 
     /**
      * method login jobseeker
-     * @param emailInput
-     * @param passwordInput
+     * @param emailInput database postgres
+     * @param passwordInput databasepostgre
      * @return jobseeker yang berhasil login
      */
     public static Jobseeker getJobseekerLogin(String emailInput, String passwordInput) {
@@ -162,7 +162,7 @@ public class DatabaseJobseekerPostgre {
 
     /**
      * method database jobseeker
-     * @return jobseeker
+     * @return jobseeker database postgre
      */
     public static ArrayList<Jobseeker> getJobseekerDatabase() {
         ArrayList<Jobseeker> jobseekers = new ArrayList<>();

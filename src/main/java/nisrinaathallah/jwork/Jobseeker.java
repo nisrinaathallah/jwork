@@ -89,8 +89,10 @@ public class Jobseeker /** inisiasi class */
     public void setId(int id){
         this.id = id;
     }
+
     /**
      * setter nama pencari pekerjaan dari jobseeker
+     * @param name jobseeker
      */
     public void setName(String name){
         this.name = name;
@@ -121,18 +123,28 @@ public class Jobseeker /** inisiasi class */
         }
         this.password = "";
     }
+
     /**
      * setter tanggal join dari jobseeker
+     * @param JoinDate dari jobseeker
      */
     public void setJoinDate(Calendar JoinDate){
         this.joinDate = joinDate;
     }
+
+    /**
+     * setter joindate jobseeker
+     * @param year tahun
+     * @param month bulan
+     * @param dayOfMonth hari/tanggal
+     */
     public void setJoinDate(int year,int month,int dayOfMonth ){
         this.joinDate = new GregorianCalendar(year, month, dayOfMonth);
     }
 
     /**
      * method menampilkan hasil jobseeker
+     * @return toString
      */
     public String toString(){
         String joindate = "";

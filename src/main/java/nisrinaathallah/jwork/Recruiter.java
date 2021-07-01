@@ -62,35 +62,35 @@ private String name;
     }
     /**
      * setter id dari recruiter
-     * @param id
+     * @param id pada Recruiter
      */
     public void setId(int id){
         this.id = id;
     }
     /**
      * setter nama perekrut dari recruiter
-     * @param name
+     * @param name pada Recruiter
      */
     public void setName(String name){
         this.name = name;
     }
     /**
      * setter email perekrut dari recruiter
-     * @param Email
+     * @param Email pada Recruiter
      */
     public void setEmail(String Email){
         this.email = email;
     }
     /**
      * setter nomor telepon dari recruiter
-     * @param phoneNumber
+     * @param phoneNumber pada Recruiter
      */
     public void setPhoneNumber(String phoneNumber){
         this.phoneNumber = phoneNumber;
     }
     /**
      * setter objek location dari recruiter
-     * @param location
+     * @param location pada Recruiter
      */
     public void setLocation(Location location){
         this.location = location;
@@ -98,7 +98,8 @@ private String name;
 
 
     /**
-     * method untuk menghasilkan recruiter
+     * method untuk menghasilkan informasi recruiter
+     * @return toString
      */
     public String toString(){
         return "Id = " + id +

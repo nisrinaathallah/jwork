@@ -17,7 +17,7 @@ public class JobseekerController {
 
     /**
      * method getter jobseeker dengan nama
-     * @param name
+     * @param name pada Jobseeker Controller
      * @return jobseeker dengan nama yang sesuai
      */
     @RequestMapping("")
@@ -27,7 +27,7 @@ public class JobseekerController {
 
     /**
      * method getter jobseeker dengan id
-     * @param id
+     * @param id pada Jobseeker Controller
      * @return jobseeker dengan id yang sesuai
      */
     @RequestMapping("/{id}")
@@ -44,9 +44,9 @@ public class JobseekerController {
 
     /**
      * method untuk melakukan regist
-     * @param name
-     * @param email
-     * @param password
+     * @param name pada Jobseeker Controller
+     * @param email pada Jobseeker Controller
+     * @param password pada Jobseeker Controller
      * @return jobseeker yang telah regist
      */
     @RequestMapping(value = "/register", method = RequestMethod.POST)
@@ -66,8 +66,8 @@ public class JobseekerController {
 
     /**
      * method untuk melakukan login
-     * @param email
-     * @param password
+     * @param email pada Jobseeker Controller
+     * @param password pada Jobseeker Controller
      * @return jobseeker yang telah login
      */
     @RequestMapping(value = "/login", method = RequestMethod.POST)

@@ -43,21 +43,21 @@ private String city;
     }
 /**
  * setter provinsi dari location
- * @param province
+ * @param province dari location
  */
     public void setProvince(String province){
         this.province = province;
     }
     /**
      * setter nama kota dari location
-     * @param city
+     * @param city dari location
      */
     public void setCity(String city){
         this.city = city;
     }
     /**
      * setter deskripsi dari location
-     * @param description
+     * @param description dari location
      */
     public void setDescription(String description){
         this.description = description;
@@ -65,6 +65,7 @@ private String city;
 
     /**
      * method toString untuk menghasilkan location
+     * @return toString
      */
     public String toString(){
         return "Province = " + province +

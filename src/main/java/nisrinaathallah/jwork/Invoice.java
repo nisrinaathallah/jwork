@@ -21,9 +21,9 @@ private ArrayList<Job> jobs;
 
     /**
      * contructor Invoice
-     * @param id
-     * @param jobs
-     * @param jobseeker
+     * @param id dari Invoice
+     * @param jobs dari Invoice
+     * @param jobseeker dari Invoice
      */
     public Invoice(int id, ArrayList<Job> jobs, Jobseeker jobseeker){
         this.id = id;
@@ -85,14 +85,14 @@ private ArrayList<Job> jobs;
  
     /**
      * setter id job dari invoice
-     * @param jobs
+     * @param jobs pekerjaan
      */
     public void setJobs(ArrayList<Job> jobs){
         this.jobs = jobs;
     }
     /**
      * setter tanggal dari invoice
-     * @param Date
+     * @param Date hari/tanggal
      */
     public void setDate(Calendar Date){
         this.date = date;
@@ -100,9 +100,9 @@ private ArrayList<Job> jobs;
 
     /**
      * setter kalender gregorian
-     * @param year
-     * @param month
-     * @param dayOfMonth
+     * @param year tahun
+     * @param month bulan
+     * @param dayOfMonth hari/tanggal
      */
     public void setDate(int year,int month,int dayOfMonth ){
         this.date = new GregorianCalendar(year, month-1, dayOfMonth);
@@ -115,7 +115,7 @@ private ArrayList<Job> jobs;
 
     /**
      * setter objek jobseeker dari invoice
-     * @param jobseeker
+     * @param jobseeker pelamar kerja
      */
     public void setJobseeker(Jobseeker jobseeker){
         this.jobseeker = jobseeker;
@@ -123,7 +123,7 @@ private ArrayList<Job> jobs;
 
     /**
      * setter jenis pembayaran dari Invoice
-     * @param paymentType
+     * @param paymentType jenis pembayaran
      */
     public void setPaymentType(PaymentType paymentType){
         this.paymentType = paymentType;
@@ -131,7 +131,7 @@ private ArrayList<Job> jobs;
 
     /**
      * setter status invoice
-     * @param invoiceStatus
+     * @param invoiceStatus status invoice
      */
     public void setInvoiceStatus(InvoiceStatus invoiceStatus){
         this.invoiceStatus = invoiceStatus;

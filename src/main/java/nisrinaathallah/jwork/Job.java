@@ -83,14 +83,14 @@ private String name;
     }
     /**
      * setter objek recruiter dari job
-     * @param recruiter
+     * @param recruiter dari job
      */
     public void setRecruiter(Recruiter recruiter){
         this.recruiter = recruiter;
     }
     /**
      * setter kategori dari job
-     * @param category
+     * @param category dari job
      */
     public void setCategory(JobCategory category){
         this.category = category;

@@ -13,7 +13,7 @@ public class ReferralCodeAlreadyExistsException extends Exception {
 
     /**
      * constructor untuk referral code already exist
-     * @param referral_input
+     * @param referral_input referral code
      */
     public ReferralCodeAlreadyExistsException(Bonus referral_input){
         super("Jobseeker Email : ") ;
