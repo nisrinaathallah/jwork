@@ -5,8 +5,6 @@
 
 package nisrinaathallah.jwork;
 import java.util.ArrayList;
-
-
 /**
  * inisiasi class untuk Database Invoice
  */

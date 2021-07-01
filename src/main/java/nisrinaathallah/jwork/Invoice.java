@@ -92,7 +92,7 @@ private ArrayList<Job> jobs;
     }
     /**
      * setter tanggal dari invoice
-     * @param date
+     * @param Date
      */
     public void setDate(Calendar Date){
         this.date = date;
@@ -107,9 +107,9 @@ private ArrayList<Job> jobs;
     public void setDate(int year,int month,int dayOfMonth ){
         this.date = new GregorianCalendar(year, month-1, dayOfMonth);
     }
+
     /**
      * setter jumlah gaji dari invoice
-     * @param totalFee
      */
     public abstract void setTotalFee();
 

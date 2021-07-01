@@ -1,13 +1,26 @@
 package nisrinaathallah.jwork.controller;
 
+/**
+ * @author Nisrina Athallah - 1806148813
+ * @version 27 - 06 -2021
+ */
+
 import nisrinaathallah.jwork.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
+/**
+ * insiasi class Recruiter Controller
+ */
 @RequestMapping("/recruiter")
 @RestController
 public class RecruiterController {
+
+    /**
+     * method untuk mengambil semua data recruiter
+     * @return database recruiter
+     */
     @RequestMapping("")
     public ArrayList<Recruiter> getAllRecruiter(){
         ArrayList<Recruiter> recruiter = null;
@@ -15,6 +28,11 @@ public class RecruiterController {
         return recruiter;
     }
 
+    /**
+     * method getter recruiter dengan id
+     * @param id
+     * @return recruiter dengan id yang sesuai
+     */
     @RequestMapping("/{id}")
     public Recruiter getRecruiterById(@PathVariable int id) {
         Recruiter recruiter = null;
@@ -27,6 +45,16 @@ public class RecruiterController {
         return recruiter;
     }
 
+    /**
+     * method untuk melakukan penambahan recruiter
+     * @param name
+     * @param email
+     * @param phoneNumber
+     * @param province
+     * @param city
+     * @param description
+     * @return recruiter yang telah ditambah
+     */
     @RequestMapping(value = "", method = RequestMethod.POST)
     public Recruiter addRecruiter(@RequestParam(value ="name") String name,
                                   @RequestParam(value ="email") String email,

@@ -31,9 +31,9 @@ public class DatabaseJob /** inisiasi class */
      * method getter dengan id
      * @param id
      * @return val jika nilainya sama dengan job
-     * @throws JobNotFoundException
+     * @throws JobnotFoundException
      */
-    public static Job getJobById(int id) throws JobNotFoundException {
+    public static Job getJobById(int id) throws JobnotFoundException {
         Job val = null;
         try {
             for (Job job : JOB_DATABASE) {
@@ -44,7 +44,7 @@ public class DatabaseJob /** inisiasi class */
         }
         catch (Exception error)
         {
-            throw new JobNotFoundException(id);
+            throw new JobnotFoundException(id);
         }
         return val;
     }
@@ -97,9 +97,9 @@ public class DatabaseJob /** inisiasi class */
      * method untuk menghapus job
      * @param id
      * @return true jika job berhasil dihapus
-     * @throws JobNotFoundException jika job tidak ditemukan
+     * @throws JobnotFoundException jika job tidak ditemukan
      */
-    public static boolean removeJob(int id) throws JobNotFoundException{
+    public static boolean removeJob(int id) throws JobnotFoundException{
         for (Job job : JOB_DATABASE)
         {
             if (job.getId() == id)
@@ -108,6 +108,6 @@ public class DatabaseJob /** inisiasi class */
                 return true;
             }
         }
-        throw new JobNotFoundException(id);
+        throw new JobnotFoundException(id);
     }
 }

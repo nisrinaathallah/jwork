@@ -1,17 +1,35 @@
+/**
+ * @author Nisrina Athallah - 1806148813
+ * @version 27 - 06 -2021
+ */
+
 package nisrinaathallah.jwork.controller;
 
 import nisrinaathallah.jwork.*;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * insiasi class Jobseeker Controller
+ */
 @RequestMapping("/jobseeker")
 @RestController
 public class JobseekerController {
 
+    /**
+     * method getter jobseeker dengan nama
+     * @param name
+     * @return jobseeker dengan nama yang sesuai
+     */
     @RequestMapping("")
     public String indexPage(@RequestParam(value="name", defaultValue="world") String name) {
         return "Hello " + name;
     }
 
+    /**
+     * method getter jobseeker dengan id
+     * @param id
+     * @return jobseeker dengan id yang sesuai
+     */
     @RequestMapping("/{id}")
     public Jobseeker getJobseekerById(@PathVariable int id) {
         Jobseeker jobseeker = null;
@@ -24,6 +42,13 @@ public class JobseekerController {
         return jobseeker;
     }
 
+    /**
+     * method untuk melakukan regist
+     * @param name
+     * @param email
+     * @param password
+     * @return jobseeker yang telah regist
+     */
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public Jobseeker registerJobseeker(@RequestParam(value="name") String name,
                                        @RequestParam(value="email") String email,
@@ -39,6 +64,12 @@ public class JobseekerController {
         return jobseeker;
     }
 
+    /**
+     * method untuk melakukan login
+     * @param email
+     * @param password
+     * @return jobseeker yang telah login
+     */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public Jobseeker loginJobseeker(@RequestParam(value="email") String email, @RequestParam(value="password") String password)
     {

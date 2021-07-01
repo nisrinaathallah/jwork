@@ -119,13 +119,13 @@ public class DatabaseBonus {
      * @return true jika terhapus, false jika tidak
      * @throws
      */
-    public static boolean removeBonus(int id) throws JobNotFoundException {
+    public static boolean removeBonus(int id) throws JobnotFoundException {
         for (Bonus bns : BONUS_DATABASE) {
             if (bns.getId() == id) {
                 BONUS_DATABASE.remove(bns);
                 return true;
             }
         }
-        throw new JobNotFoundException(id);
+        throw new JobnotFoundException(id);
     }
 }

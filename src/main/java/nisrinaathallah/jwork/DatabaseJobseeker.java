@@ -34,7 +34,7 @@ public class DatabaseJobseeker {
      * method getter jobseeker sesuai dengan id
      * @param id
      * @return jobseeker yang dicari
-     * @throws JobSeekerNotFoundException
+     * @throws JobseekerNotFoundException
      */
     public static Jobseeker getJobseekerById(int id) throws JobseekerNotFoundException {
         Jobseeker val = null;
@@ -66,7 +66,7 @@ public class DatabaseJobseeker {
      * method penghapusan jobseeker
      * @param id
      * @return true jika jobseeker berhasil dihapus
-     * @throws JobSeekerNotFoundException
+     * @throws JobseekerNotFoundException
      */
     public static boolean removeJobseeker(int id) throws JobseekerNotFoundException{
         for (Jobseeker js : JOBSEEKER_DATABASE) {

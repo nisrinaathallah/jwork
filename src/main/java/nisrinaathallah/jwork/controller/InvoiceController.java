@@ -1,18 +1,35 @@
+/**
+ * @author Nisrina Athallah - 1806148813
+ * @version 27 - 06 -2021
+ */
+
 package nisrinaathallah.jwork.controller;
 
 import nisrinaathallah.jwork.*;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.ArrayList;
 
 @RequestMapping("/invoice")
 @RestController
+/**
+ * class pada Invoice Controller
+ */
 public class InvoiceController {
 
+    /**
+     * method getter semua kelas invoice
+     * @return invoice
+     */
     @RequestMapping("")
     public ArrayList<Invoice> getAllInvoice(){
         return DatabaseInvoice.getInvoiceDatabase();
     }
+
+    /**
+     * method getter Invoice berdasarkan id
+     * @param id
+     * @return invoice dengan id yang sesuai
+     */
     @RequestMapping("/{id}")
     public Invoice getInvoiceById(@PathVariable int id) {
         Invoice invoice = null;
@@ -25,11 +42,23 @@ public class InvoiceController {
         return invoice;
     }
 
+    /**
+     * method getter invoice dengan jobseeker
+     * @param jobseekerId
+     * @return invoice dengan id jobseeker yang sesuai
+     */
     @RequestMapping(value = "/jobseeker/{jobseekerId}", method = RequestMethod.GET)
     public ArrayList<Invoice> getInvoiceByJobseeker(@PathVariable int jobseekerId) {
         return DatabaseInvoice.getInvoiceByJobseeker(jobseekerId);
     }
 
+    /**
+     * method invoice status
+     * @param id
+     * @param invoiceStatus
+     * @return jumlah invoice terbaru
+     * @throws InvoiceNotFoundException
+     */
     @RequestMapping(value = "/invoiceStatus/{id}", method = RequestMethod.PUT)
     public Invoice changeInvoiceStatus(@RequestParam(value="id") int id,
                                        @RequestParam(value="invoiceStatus") InvoiceStatus invoiceStatus) throws InvoiceNotFoundException {
@@ -38,6 +67,11 @@ public class InvoiceController {
         return invoice;
     }
 
+    /**
+     * method penghapusan invoice dengan id
+     * @param id
+     * @return true apabila berhasil dihapus
+     */
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public Boolean removeInvoice(@RequestParam(value = "id") int id){
         try{
@@ -49,7 +83,13 @@ public class InvoiceController {
         return true;
     }
 
-
+    /**
+     * method invoice dengan bank payment
+     * @param jobIdList list job yang dipilih
+     * @param jobseekerId id pelamar kerja
+     * @param adminFee upah untuk admin
+     * @return invoice yang baru dibuat
+     */
     @RequestMapping(value = "/createBankPayment", method = RequestMethod.POST)
     public Invoice addBankPayment(@RequestParam(value = "jobIdList") ArrayList<Integer> jobIdList,
                                   @RequestParam(value = "jobseekerId") int jobseekerId,
@@ -58,7 +98,7 @@ public class InvoiceController {
         for (int jobs : jobIdList) {
             try {
                 job.add(DatabaseJob.getJobById(jobs));
-            } catch (JobNotFoundException e) {
+            } catch (JobnotFoundException e) {
                 System.out.println(e.getMessage());
             }
         }
@@ -74,6 +114,13 @@ public class InvoiceController {
         }
     }
 
+    /**
+     * method invoice dengan metode e wallet payment
+     * @param jobIdList list job yang dipiluh
+     * @param jobseekerId id pelamar kerja
+     * @param referralCode kode bonus yang digunakan
+     * @return invoice yang baru dibuat
+     */
     @RequestMapping(value = "/createEWalletPayment", method = RequestMethod.POST)
     public Invoice addBankPayment(@RequestParam(value = "jobIdList") ArrayList<Integer> jobIdList,
                                   @RequestParam(value = "jobseekerId") int jobseekerId,
