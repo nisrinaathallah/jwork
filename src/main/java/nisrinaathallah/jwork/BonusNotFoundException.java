@@ -12,7 +12,7 @@ public class BonusNotFoundException extends Exception {
 
     /**
      * constructor bonus not found exception
-     * @param bonus_input
+     * @param bonus_input untuk bonus
      */
     public BonusNotFoundException(int bonus_input){
         super("Bonus ID: ");

@@ -13,6 +13,7 @@ public class OngoingInvoiceAlreadyExistsException extends Exception{
 
     /**
      * constructor yang digunakan
+     * @param invoice_input pada Ongoing Invoice Already Exists
      */
     public OngoingInvoiceAlreadyExistsException(Invoice invoice_input){
         super("Jobseeker Email : ") ;
@@ -20,7 +21,8 @@ public class OngoingInvoiceAlreadyExistsException extends Exception{
     }
 
     /**
-     * method menampilkan hasil error
+     * method untuk menghasilkan pesan error
+     * @return pesan already exist
      */
     @Override
     public String getMessage() {

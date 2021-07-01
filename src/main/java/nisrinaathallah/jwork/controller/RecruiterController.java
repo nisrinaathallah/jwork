@@ -30,7 +30,7 @@ public class RecruiterController {
 
     /**
      * method getter recruiter dengan id
-     * @param id
+     * @param id pada Recruiter controller
      * @return recruiter dengan id yang sesuai
      */
     @RequestMapping("/{id}")
@@ -47,12 +47,12 @@ public class RecruiterController {
 
     /**
      * method untuk melakukan penambahan recruiter
-     * @param name
-     * @param email
-     * @param phoneNumber
-     * @param province
-     * @param city
-     * @param description
+     * @param name pada Recruiter controller
+     * @param email pada Recruiter controller
+     * @param phoneNumber pada Recruiter controller
+     * @param province pada Recruiter controller
+     * @param city pada Recruiter controller
+     * @param description pada Recruiter controller
      * @return recruiter yang telah ditambah
      */
     @RequestMapping(value = "", method = RequestMethod.POST)

@@ -32,9 +32,9 @@ public class DatabaseJobseeker {
 
     /**
      * method getter jobseeker sesuai dengan id
-     * @param id
+     * @param id nomor id
      * @return jobseeker yang dicari
-     * @throws JobseekerNotFoundException
+     * @throws JobseekerNotFoundException jika jobseeker tidak ada
      */
     public static Jobseeker getJobseekerById(int id) throws JobseekerNotFoundException {
         Jobseeker val = null;
@@ -47,9 +47,9 @@ public class DatabaseJobseeker {
 
     /**
      * method penambahan jobseeker
-     * @param jobseeker
+     * @param jobseeker pelamar kerja
      * @return true jika berhasil ditambah
-     * @throws EmailAlreadyExistsException
+     * @throws EmailAlreadyExistsException jika email sudah ada
      */
     public static boolean addJobseeker(Jobseeker jobseeker) throws EmailAlreadyExistsException {
         for(Jobseeker jobseekers : JOBSEEKER_DATABASE)
@@ -64,9 +64,9 @@ public class DatabaseJobseeker {
 
     /**
      * method penghapusan jobseeker
-     * @param id
+     * @param id dari database jobseeker
      * @return true jika jobseeker berhasil dihapus
-     * @throws JobseekerNotFoundException
+     * @throws JobseekerNotFoundException jika jobseeker tidak ada
      */
     public static boolean removeJobseeker(int id) throws JobseekerNotFoundException{
         for (Jobseeker js : JOBSEEKER_DATABASE) {
@@ -80,8 +80,8 @@ public class DatabaseJobseeker {
 
     /**
      * method untuk login jobseeker
-     * @param email
-     * @param password
+     * @param email dari database jobseeker
+     * @param password dari database jobseeker
      * @return jobseeker yang berhasil login
      */
     public static Jobseeker jobseekerLogin(String email, String password) {

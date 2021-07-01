@@ -27,7 +27,7 @@ public class JobController {
 
     /**
      * method getter menggunakan id
-     * @param id
+     * @param id untuk id
      * @return job dengan id yang sesuai
      */
     @RequestMapping("/{id}")
@@ -44,7 +44,7 @@ public class JobController {
 
     /**
      * method getter dengan id recruiter
-     * @param recruiterId
+     * @param recruiterId untuk id recruiter
      * @return job dengan recruiter id yang sesuai
      */
     @RequestMapping(value = "/recruiter/{recruiterId}", method = RequestMethod.GET)
@@ -54,7 +54,7 @@ public class JobController {
 
     /**
      * method getter dengan kategori
-     * @param category
+     * @param category untuk jenis katgori job
      * @return job dengan kategori yang sesuai
      */
     @RequestMapping(value = "/category/{category}", method = RequestMethod.GET)
@@ -67,9 +67,9 @@ public class JobController {
      * @param name nama pekerjaan
      * @param fee bonus
      * @param category kategori job
-     * @param recruiterId
+     * @param recruiterId id recruiter
      * @return job yang telah dibuat
-     * @throws RecruiterNotFoundException
+     * @throws RecruiterNotFoundException recruiter not found
      */
     @RequestMapping(value = "", method = RequestMethod.POST)
     public Job addJob(@RequestParam(value="name") String name,

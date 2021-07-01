@@ -10,7 +10,7 @@ public class RecruiterNotFoundException extends Exception {
 
     /**
      * constructor recruiter not found exception
-     * @param recruiter_input
+     * @param recruiter_input pada Recruiter Not Found Exception
      */
     public RecruiterNotFoundException(int recruiter_input){
         super("Recruiter ID: ");

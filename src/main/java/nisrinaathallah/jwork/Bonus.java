@@ -13,11 +13,11 @@ private String referralCode;
 
     /**
      * constructor untuk bonus
-     * @param id
-     * @param referralCode
-     * @param extraFee
-     * @param minTotalFee
-     * @param active
+     * @param id dari Bonus
+     * @param referralCode dari Bonus
+     * @param extraFee dari Bonus
+     * @param minTotalFee dari Bonus
+     * @param active dari Bonus
      */
     public Bonus(int id, String referralCode, int extraFee, int minTotalFee, boolean active){
         this.id = id;

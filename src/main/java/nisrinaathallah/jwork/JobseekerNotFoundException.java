@@ -12,7 +12,7 @@ public class JobseekerNotFoundException extends Exception {
 
     /**
      * constructor jobseeker not found exception
-     * @param jobseeker_input
+     * @param jobseeker_input pada jobseeker not found exception
      */
     public JobseekerNotFoundException(int jobseeker_input){
         super("Jobseeker ID: ");

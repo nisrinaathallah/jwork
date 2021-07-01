@@ -27,7 +27,7 @@ public class InvoiceController {
 
     /**
      * method getter Invoice berdasarkan id
-     * @param id
+     * @param id pada Invoice Controller
      * @return invoice dengan id yang sesuai
      */
     @RequestMapping("/{id}")
@@ -44,7 +44,7 @@ public class InvoiceController {
 
     /**
      * method getter invoice dengan jobseeker
-     * @param jobseekerId
+     * @param jobseekerId pada Invoice Controller
      * @return invoice dengan id jobseeker yang sesuai
      */
     @RequestMapping(value = "/jobseeker/{jobseekerId}", method = RequestMethod.GET)
@@ -54,10 +54,10 @@ public class InvoiceController {
 
     /**
      * method invoice status
-     * @param id
-     * @param invoiceStatus
+     * @param id pada Invoice Controller
+     * @param invoiceStatus pada Invoice Controller
      * @return jumlah invoice terbaru
-     * @throws InvoiceNotFoundException
+     * @throws InvoiceNotFoundException invoice not found
      */
     @RequestMapping(value = "/invoiceStatus/{id}", method = RequestMethod.PUT)
     public Invoice changeInvoiceStatus(@RequestParam(value="id") int id,
@@ -69,7 +69,7 @@ public class InvoiceController {
 
     /**
      * method penghapusan invoice dengan id
-     * @param id
+     * @param id pada Invoice Controller
      * @return true apabila berhasil dihapus
      */
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)

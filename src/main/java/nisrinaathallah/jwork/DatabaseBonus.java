@@ -30,9 +30,9 @@ public class DatabaseBonus {
 
     /**
      * method getter bonus sesuai id
-     * @param id
+     * @param id database bonus
      * @return bonus dengan id yang sesuai
-     * @throws BonusNotFoundException
+     * @throws BonusNotFoundException jika sesuai
      */
     public static Bonus getBonusById(int id) throws BonusNotFoundException {
         Bonus val = null;
@@ -52,7 +52,7 @@ public class DatabaseBonus {
 
     /**
      * method getter bonus sesuai dengan referral code
-     * @param referralCode
+     * @param referralCode database bonus
      * @return bonus dengan referral code yang sesuai
      */
     public static Bonus getBonusByReferralCode(String referralCode){
@@ -66,9 +66,9 @@ public class DatabaseBonus {
 
     /**
      * method penambahan bonus
-     * @param bonus
+     * @param bonus database bonus
      * @return true apabila penambahan berhasil
-     * @throws ReferralCodeAlreadyExistsException
+     * @throws ReferralCodeAlreadyExistsException jika referral code sudah ada
      */
     public static boolean addBonus(Bonus bonus) throws ReferralCodeAlreadyExistsException {
         for (Bonus bns : BONUS_DATABASE)
@@ -85,7 +85,7 @@ public class DatabaseBonus {
 
     /**
      * method aktivasi bonus
-     * @param id
+     * @param id database bonus
      * @return true jika berhasil, false jika tidak
      */
     public static boolean activateBonus(int id) {
@@ -100,7 +100,7 @@ public class DatabaseBonus {
 
     /**
      * method menonaktifkan bonus
-     * @param id
+     * @param id database bonus
      * @return true jika berhasil, false jika tidak
      */
     public static boolean deactivateBonus(int id) {
@@ -115,9 +115,9 @@ public class DatabaseBonus {
 
     /**
      * method penghilangan bonus
-     * @param id
+     * @param id database bonus
      * @return true jika terhapus, false jika tidak
-     * @throws
+     * @throws JobnotFoundException jika tidak ditemukan job
      */
     public static boolean removeBonus(int id) throws JobnotFoundException {
         for (Bonus bns : BONUS_DATABASE) {

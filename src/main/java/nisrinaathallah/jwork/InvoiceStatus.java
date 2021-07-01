@@ -16,7 +16,7 @@ public enum InvoiceStatus
 
     /**
      * constructor pada enum
-     * @param text
+     * @param text dari invoice status
      */
     InvoiceStatus(String text){
         this.text = text;

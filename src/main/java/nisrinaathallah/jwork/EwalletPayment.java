@@ -7,7 +7,6 @@ package nisrinaathallah.jwork;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Calendar;
 
 
 /**
@@ -21,9 +20,9 @@ public class EwalletPayment extends Invoice
 
     /**
      * constructor ewallet payment
-     * @param id
-     * @param jobs
-     * @param jobseeker
+     * @param id nomor id
+     * @param jobs nama pekerjaan
+     * @param jobseeker nama pelamar kerja
      */
     public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker){
         super(id, jobs, jobseeker);
@@ -31,10 +30,10 @@ public class EwalletPayment extends Invoice
 
     /**
      * constructor ewalletpayment dengan bonus
-     * @param id
-     * @param jobs
-     * @param jobseeker
-     * @param bonus
+     * @param id nomor id
+     * @param jobs nama pekerjaan
+     * @param jobseeker nama pelamar kerja
+     * @param bonus kode bonus
      */
     public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker, Bonus bonus){
         super(id, jobs, jobseeker);
@@ -59,7 +58,7 @@ public class EwalletPayment extends Invoice
 
     /**
      * method setter bonus
-     * @param bonus
+     * @param bonus bonus
      */
     public void setBonus(Bonus bonus){
         this.bonus = bonus;
@@ -74,7 +73,7 @@ public class EwalletPayment extends Invoice
 
     /**
      * method setter total fee untuk menghitung upah
-     * @return
+     * @return string
      */
     @Override
     public String toString() {
